@@ -28,10 +28,9 @@ Matrix matrixAdd(const Matrix & matrix_1, const Matrix & matrix_2){
 
 Matrix matrixMultiply(const Matrix & matrix_1, const Matrix & matrix_2){
     
-    // Checking if the No. of columns for matrix_1 are equal to the No. of rows for matrix_2;
-    //Else, performing operation
-
-
+    // Checking if the No. of columns for matrix_1 are equal to the No. of rows for matrix_2,
+    // Checking if Matrices are empty,
+    //Else, perform operation
     if(matrix_1.empty() || matrix_2.empty() || matrix_1[0].empty() || matrix_2[0].empty()){
         throw std::invalid_argument("-1");
     }else
@@ -43,7 +42,6 @@ Matrix matrixMultiply(const Matrix & matrix_1, const Matrix & matrix_2){
     size_t brows = matrix_2.size();
     size_t bcolumns = matrix_2[0].size();
 
-    //Initializing Resulting Matrix
     Matrix matrix_3(arows, Array(bcolumns, 0));
 
         for(int i = 0; i < arows; i++){
